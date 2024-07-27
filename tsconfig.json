@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "./app/static/dist",
+    "rootDir": "./app/static/scripts",
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "app/static/scripts/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

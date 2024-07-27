@@ -1,0 +1,130 @@
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("../fonts/HankenGrotesk-VariableFont_wght.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  --very-light-blue: #ecf2ff;
+  --light-blue: #cac9ff;
+  --gradient1: linear-gradient(180deg, #6943ff 0%, #2f2ce9 100%);
+  --gradient2: linear-gradient(180deg, #4d21c9 0%, rgba(37, 33, 201, 0) 100%);
+}
+
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  background-color: var(--very-light-blue);
+  margin: auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 512px;
+  width: 736px;
+  background-color: white;
+  border-radius: 32px;
+}
+
+#yourResult {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 368px;
+  height: 100%;
+  border-radius: 32px;
+  background: var(--gradient1);
+  box-sizing: border-box;
+  padding-top: 38px;
+  padding-bottom: 46px;
+}
+
+#yourResult > h2 {
+  color: var(--light-blue);
+}
+
+#yourResult > div:nth-of-type(1) {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  min-height: 200px;
+  border-radius: 50%;
+  background: var(--gradient2);
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+  margin-bottom: 28px;
+  box-sizing: border-box;
+}
+
+#yourResult > div:nth-of-type(1) > span:nth-of-type(1) {
+  color: white;
+}
+#yourResult > div:nth-of-type(1) > span:nth-of-type(2) {
+  color: var(--light-blue);
+  opacity: 0.5168;
+}
+
+#yourResult > div:nth-of-type(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 260px;
+  text-align: center;
+  gap: 14px;
+}
+
+#yourResult > div:nth-of-type(2) > p {
+  color: var(--light-blue);
+}
+
+h1 {
+  color: white;
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+.headingXL {
+  font-weight: 800;
+  font-size: 72px;
+}
+
+.headingL {
+  font-weight: 600;
+  font-size: 32px;
+}
+
+.headingM {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.bodyBold {
+  font-size: 18px;
+  font-weight: 600;
+}
+.body {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  main {
+    height: 100dvh;
+  }
+}
