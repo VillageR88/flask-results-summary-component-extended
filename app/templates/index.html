@@ -2,30 +2,42 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blog preview card for FM">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="icon" href="{{ url_for('static', filename='images/favicon-32x32.png') }}" sizes="32x32" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Blog preview card for FM" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon-32x32.png') }}" sizes="32x32" type="image/png" />
 
-    <title>{{ siteTitle }}</title>
+  <title>{{ siteTitle }}</title>
 </head>
 
 <body>
-    <main>
-        <div id="yourResult">
-            <h2 class="headingM">Your Result</h2>
-            <div>
-                <span class="headingXL">76</span>
-                <span class="bodyBold">of 100</span>
-            </div>
-            <div>
-                <h1 class="headingL">Great</h1>
-                <p class="body">Your performance exceed 65% of the people conducting the test here!</p>
-            </div>
-        </div>
-        <div></div>
-    </main>
+  <main>
+    <div id="yourResult">
+      <h2 class="headingM">Your Result</h2>
+      <div>
+        <span class="headingXL">76</span>
+        <span class="bodyBold">of 100</span>
+      </div>
+      <div>
+        <h1 class="headingL">Great</h1>
+        <p class="body">
+          Your performance exceed 65% of the people conducting the test here!
+        </p>
+      </div>
+    </div>
+    <div id="summary">
+      <h2>Summary</h2>
+      <ul>
+        {% for val in audit %}
+        <li>{{ val }}</li>
+        {% endfor %}
+      </ul>
+      <button class="bodyBold" id="continue">
+        <div></div><span>Continue</span>
+      </button>
+    </div>
+  </main>
 </body>
 
 <script src="{{ url_for('static', filename='dist/main.js') }}"></script>

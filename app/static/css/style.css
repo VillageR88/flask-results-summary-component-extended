@@ -7,12 +7,17 @@
 :root {
   --very-light-blue: #ecf2ff;
   --light-blue: #cac9ff;
+  --dark-navy: #303b59;
   --gradient1: linear-gradient(180deg, #6943ff 0%, #2f2ce9 100%);
   --gradient2: linear-gradient(180deg, #4d21c9 0%, rgba(37, 33, 201, 0) 100%);
 }
 
-body {
+* {
   font-family: "Hanken Grotesk", sans-serif;
+  transition: opacity 0.15s;
+}
+
+body {
   background-color: var(--very-light-blue);
   margin: auto;
   padding: 0;
@@ -121,6 +126,81 @@ p {
 .body {
   font-size: 18px;
   font-weight: 500;
+}
+
+#summary {
+  max-width: 368px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-inline: 40px;
+  box-sizing: border-box;
+  padding-top: 38px;
+  padding-bottom: 46px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 26px;
+  margin-bottom: 41px;
+}
+
+#summary > ul > li {
+  height: 56px;
+  width: 100%;
+  background-color: #6943ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 16px;
+  box-sizing: border-box;
+  border-radius: 12px;
+}
+
+#summary > button {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  border-radius: 128px;
+  border: none;
+  background: var(--dark-navy);
+  color: white;
+  margin: 0px;
+  padding: 0px;
+}
+
+#summary > button > div {
+  position: absolute;
+  background: var(--gradient1);
+  width: 100%;
+  height: 100%;
+  border-radius: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+#summary > button > span {
+  position: absolute;
+  color: white;
+}
+
+#summary > button:hover > div {
+  opacity: 1;
+}
+
+#summary > button:hover {
+  cursor: pointer;
 }
 
 @media (max-width: 640px) {
