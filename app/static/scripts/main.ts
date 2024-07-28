@@ -25,11 +25,11 @@ function updateTotalScore() {
     const averageScore = validScores.reduce((acc, score) => acc + score, 0) / validScores.length;
     totalScore.textContent = `${Math.floor(averageScore)}`;
     if (Number(totalScore.textContent) < 50) {
-        comment1.textContent = 'Your website performance needs improvement.';
-        comment2.textContent = 'Consider using tools like Lighthouse or PageSpeed Insights to identify issues and optimize performance.';
+        comment1.textContent = 'Poor';
+        comment2.textContent = 'Use tools like Lighthouse and PageSpeed Insights to optimize various aspects of your site.';
     } else if (Number(totalScore.textContent) < 80) {
-        comment1.textContent = 'Your website performance is average.';
-        comment2.textContent = 'To enhance speed, you might want to optimize various aspects of your site. Tools like Lighthouse and PageSpeed Insights can provide valuable suggestions.';
+        comment1.textContent = 'Average';
+        comment2.textContent = 'Use tools like Lighthouse and PageSpeed Insights to optimize various aspects of your site.';
     } else {
         comment1.textContent = 'Great job!';
         comment2.textContent = 'Your website is performing well. Keep up the good work!';
