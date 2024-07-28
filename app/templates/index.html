@@ -34,13 +34,14 @@
       <div id="summary">
         <h2 class="headingM">Summary</h2>
         <ul>
-          {% for val in audit %}
-          <li id="{{ val }}li">
+          {% for item in audit %}
+          <li id="{{ item.val }}li">
             <div>
-              <span>{{ val }}</span>
+              <img width="20px" height="20px" src="{{ item.src }}" />
+              <span>{{ item.val }}</span>
             </div>
             <div class="bodyBold">
-              <span id="{{val}}"></span>
+              <span id="{{ item.val }}"></span>
               <span>/ 100</span>
             </div>
           </li>

@@ -176,6 +176,12 @@ ul {
   cursor: help;
 }
 
+#summary > ul > li > div:nth-of-type(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
 #summary > ul > li > div:nth-of-type(2) {
   display: flex;
   justify-content: center;
@@ -265,6 +271,8 @@ ul {
   body {
     min-height: 100dvh;
     padding-block: 0px;
+    justify-content: start;
+    background-color: white;
   }
   main {
     flex-direction: column;

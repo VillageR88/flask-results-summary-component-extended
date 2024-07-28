@@ -9,8 +9,10 @@ def create_app():
     def index():
         context = {
             'siteTitle': "Results summary component extended",
-            'audit': ['PLT', 'TTFB', 'DCL', 'FCP']
-        }
+            'audit': [{'val': 'PLT', 'src': 'static/images/timer_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg'}, 
+                      {'val': 'TTFB', 'src': 'static/images/line_start_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg'}, 
+                      {'val': 'DCL', 'src': 'static/images/code_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg'}, 
+                      {'val': 'FCP', 'src': 'static/images/palette_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg'}]}
         return render_template('index.html', **context)
 
     @app.route('/robots.txt')
@@ -26,3 +28,5 @@ def create_app():
 if __name__ == "__main__":
     app = create_app()
     app.run(debug=True)
+    
+    
