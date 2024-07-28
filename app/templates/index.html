@@ -1,45 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Blog preview card for FM" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/favicon-32x32.png') }}"
+      sizes="32x32"
+      type="image/png"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Blog preview card for FM" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-  <link rel="icon" href="{{ url_for('static', filename='images/favicon-32x32.png') }}" sizes="32x32" type="image/png" />
+    <title>{{ siteTitle }}</title>
+  </head>
 
-  <title>{{ siteTitle }}</title>
-</head>
-
-<body>
-  <main>
-    <div id="yourResult">
-      <h2 class="headingM">Your Result</h2>
-      <div>
-        <span class="headingXL">76</span>
-        <span class="bodyBold">of 100</span>
+  <body>
+    <main>
+      <div id="yourResult">
+        <h2 class="headingM">Your Result</h2>
+        <div>
+          <span id="totalScore" class="headingXL">76</span>
+          <span class="bodyBold">of 100</span>
+        </div>
+        <div>
+          <h1 id="comment1" class="headingL"></h1>
+          <p id="comment2" class="body"></p>
+        </div>
       </div>
-      <div>
-        <h1 class="headingL">Great</h1>
-        <p class="body">
-          Your performance exceed 65% of the people conducting the test here!
-        </p>
+      <div id="summary">
+        <h2>Summary</h2>
+        <ul>
+          {% for val in audit %}
+          <li id="{{ val }}li">
+            <div>
+              <span>{{ val }}</span>
+            </div>
+            <div class="bodyBold">
+              <span id="{{val}}"></span>
+              <span>/ 100</span>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+        <button
+          type="button"
+          onclick="window.location.reload();"
+          class="bodyBold"
+          id="continue"
+        >
+          <div></div>
+          <span>Continue</span>
+        </button>
       </div>
-    </div>
-    <div id="summary">
-      <h2>Summary</h2>
-      <ul>
-        {% for val in audit %}
-        <li>{{ val }}</li>
-        {% endfor %}
-      </ul>
-      <button class="bodyBold" id="continue">
-        <div></div><span>Continue</span>
-      </button>
-    </div>
-  </main>
-</body>
+    </main>
+  </body>
 
-<script src="{{ url_for('static', filename='dist/main.js') }}"></script>
-
+  <script src="{{ url_for('static', filename='dist/main.js') }}"></script>
 </html>

@@ -9,7 +9,7 @@ def create_app():
     def index():
         context = {
             'siteTitle': "Results summary component extended",
-            'audit': ['val1', 'val2', 'val3', 'val4']
+            'audit': ['PLT', 'TTFB', 'DCL', 'FCP']
         }
         return render_template('index.html', **context)
 
